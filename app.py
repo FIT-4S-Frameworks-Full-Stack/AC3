@@ -14,7 +14,12 @@ from models import *
 
 
 # CONTROLLERS
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def main():
+    return render_template('index.html')
+
+
+@app.route('/gravar', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         nome = request.form['nome']
